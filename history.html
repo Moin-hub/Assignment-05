@@ -16,7 +16,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="sticky top-0"></header>
+    <section id="historyPage">
+        <header class="sticky top-0"></header>
         <section class=" w-full p-5  bg-[#F9F7F3]">
             <nav class="max-w-screen-xl mx-auto">
                 <div class="flex flex-col items-center space-y-3 md:flex-row justify-between ">
@@ -27,23 +28,20 @@
                     </div>
                      <div class="flex items-center">
                     <img src="assets/coin.png" alt="">
-                    <p class="font-semibold text-xl text-gray-500 ml-2"><span class="mr-1">5500</span>BDT</p>
+                    <p class="font-semibold text-xl text-gray-500 ml-2"><span  id="totalBalance" class="mr-1">5500</span>BDT</p>
                     </div>
                 </div>
             </nav>
         </section>
         <section class="text-center pt-8 pb-4 bg-white bg-opacity-95 mb-8">
-            <button onclick="window.location.href='index.html';" class="font-bold px-5 py-3 rounded-lg border border-gray-400 text-gray-500">Donation</button>
-            <button  onclick="window.location.href='history.html';" class="font-bold bg-[#B4F461] px-5 py-3 rounded-lg">History</button>
+            <button id="btn-donation" class="font-bold px-5 py-3 rounded-lg border border-gray-400 text-gray-500">Donation</button>
+            <button class="font-bold bg-[#B4F461] px-5 py-3 rounded-lg">History</button>
         </section>
     </header>
     <!-- history section -->
     
-        <ul id="list-container" class="max-w-screen-xl mx-auto" >
-            <li>one</li>
-            <li>two</li>
-        </ul>
     
+
     <script src="script.js"></script>
 </body>
 </html>
