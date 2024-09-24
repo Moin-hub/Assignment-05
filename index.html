@@ -24,8 +24,8 @@
   </head>
   <body>
     <section id="homePage" class="lexend-font">
-      <header class="sticky top-0">
-        <section class="w-full p-5 bg-[#F9F7F3]">
+      <header class="sticky top-0  backdrop-blur-lg">
+        <section class="w-full p-5 bg-[#f9f7f3]">
           <nav class="max-w-screen-xl mx-auto">
             <div
               class="flex flex-col items-center space-y-3 md:flex-row justify-between"
@@ -50,9 +50,8 @@
             </div>
           </nav>
         </section>
-        <section class="text-center pt-8 pb-4 bg-white bg-opacity-95">
+        <section class="text-center pt-8 pb-4 bg-white bg-opacity-50">
           <button
-            id="btn-donation"
             class="font-bold bg-[#B4F461] px-5 py-3 rounded-lg"
           >
             Donation
@@ -82,7 +81,7 @@
                 <span id="firstTotal" class="mr-1">2500</span>BDT
               </p>
             </button>
-            <h1 class="font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
+            <h1 id="card-name-1" class="font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
             <p class="text-gray-500 font-light">
               The recent floods in Noakhali have caused significant damage to
               homes infrastructure. Your donation will help provide essential
@@ -141,7 +140,7 @@
                 <span id="secondTotal" class="mr-1">600</span>BDT
               </p>
             </button>
-            <h1 class="font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
+            <h1 id="card-name-2" class="font-bold">Donate for Flood Relief in Feni,Bangladesh</h1>
             <p class="font-light">
               The recent floods in Feni have devastated local communities, leading
               to severe disruption and loss. Your generous donation will help
@@ -181,7 +180,7 @@
                 <span id="thirdTotal" class="mr-1">2400</span>BDT
               </p>
             </button>
-            <h1 class="font-bold">Aid for Injured in the Quota Movement</h1>
+            <h1 id="card-name-3" class="font-bold">Aid for Injured in the Quota Movement</h1>
             <p class="font-light">
               The recent Quota movement has resulted in numerous injuries and
               significant hardship for many individuals. Your support is crucial
@@ -212,6 +211,39 @@
       <footer class="bg-[#F9F7F3] h-28 w-full"></footer>
     </section>
 
+
+
+    <!-- history section -->
+
+    <section id="historyPage" class="hidden lexend-font sticky top-0 ">
+      <header class="backdrop-blur-lg">
+      <section class=" w-full p-5  bg-[#F9F7F3]">
+          <nav class="max-w-screen-xl mx-auto">
+              <div class="flex flex-col items-center space-y-3 md:flex-row justify-between ">
+                  <button class="font-bold bg-[#B4F461] px-5 py-2 rounded-lg">Blog</button>
+                  <div class="flex flex-col md:flex-row items-center gap-4">
+                  <img src="assets/logo.png" alt="">
+                  <h3 class="font-semibold text-2xl">Donate Bangladesh</h3>
+                  </div>
+                   <div class="flex items-center">
+                  <img src="assets/coin.png" alt="">
+                  <p class="font-semibold text-xl text-gray-500 ml-2"><span  id="totalBalance2" class="mr-1">5500</span>BDT</p>
+                  </div>
+              </div>
+          </nav>
+      </section>
+      <section class="text-center pt-8 pb-4 bg-white bg-opacity-50 mb-8">
+          <button id="btn-donation" class="font-bold px-5 py-3 rounded-lg border border-gray-400 text-gray-500">Donation</button>
+          <button class="font-bold bg-[#B4F461] px-5 py-3 rounded-lg">History</button>
+      </section>
+  </header>
+  </section>
+  <section id="historySection">
+      <div id="history-items" class="max-w-screen-xl mx-auto flex flex-col gap-4">
+
+      </div>
+    
+  </section>
   
     <script src="script.js"></script>
   </body>

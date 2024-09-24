@@ -1,41 +1,43 @@
+const historyTotal = document.getElementById("totalBalance2");
+
+
+// // // function 01
 function takeInnerText(id){
     const getEl = document.getElementById(id).innerText;
     const getElNumber = parseFloat(getEl);
     return getElNumber;
 };
+// // // function 02
 function getInputValue(id) {
     const getVL = document.getElementById(id).value;
     const getVLNumber = parseFloat(getVL);
     return getVLNumber;
 };
 
-document.getElementById("btn-donation").addEventListener('click', function(event) {
-        event.preventDefault();
-        
-        window.location.href='index.html';
+
+const homePG = document.getElementById("homePage");
+const historyPG = document.getElementById("historyPage");
+const donationBtn = document.getElementById("btn-donation");
+const historyBtn = document.getElementById("btn-history");
+
+historyBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    historyPG.classList.remove("hidden");
+    historyPG.classList.add("block");
+    homePG.classList.remove("block");
+    homePG.classList.add("hidden");
 })
-document.getElementById("btn-history").addEventListener('click', function(event) {
-        event.preventDefault();
-        window.location.href='history.html';
+donationBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    historyPG.classList.remove("block");
+    historyPG.classList.add("hidden");
+    homePG.classList.remove("hidden");
+    homePG.classList.add("block");
 })
 
-////////////////////////////////////////////////////////////////////////
-// function showSectionById(id) {
-//     document.getElementById('homePage').classList.add('hidden');
-//     document.getElementById('historyPage').classList.add('hidden');
 
-//     // // show the section with the provided id as parameter
-//     document.getElementById(id).classList.remove('hidden');
-// }
-// document.getElementById("btn-history").addEventListener('click', function(event) {
-    //     event.preventDefault();
-//     showSectionById('historyPage');
-// })
-// document.getElementById("btn-donation").addEventListener('click', function(event) {
-    //     event.preventDefault();
-//     showSectionById('homePage');
-// })
 ///////////////////////////////////////////////////////////////////////////
+// // // function 03
 function handleDonation(donateBtnId, inputId, totalBalanceId, semiTotalId){
     document.getElementById(donateBtnId).addEventListener('click', function(event) {
         event.preventDefault();
@@ -66,7 +68,16 @@ function handleDonation(donateBtnId, inputId, totalBalanceId, semiTotalId){
                 alert("Insufficient Balance!!");
                 return;
             }
-
+            if(donateBtnId === "donateNowOne"){
+                addHistoryItem(inputNumber, cardNameOne);
+            }
+            else if(donateBtnId === "donateNowTwo"){
+                addHistoryItem(inputNumber, cardNameTwo);
+            }
+            else{
+                addHistoryItem(inputNumber, cardNameThree);
+            }
+            historyTotal.innerText = newTotalBalance;
             document.getElementById(totalBalanceId).innerText = newTotalBalance;
             document.getElementById(semiTotalId).innerText = newSemiTotal;
             document.getElementById(inputId).value = '';
@@ -81,3 +92,17 @@ function handleDonation(donateBtnId, inputId, totalBalanceId, semiTotalId){
 handleDonation('donateNowOne', 'inputOne', 'totalBalance', 'firstTotal');
 handleDonation('donateNowTwo', 'inputTwo', 'totalBalance', 'secondTotal');
 handleDonation('donateNowThree', 'inputThree', 'totalBalance', 'thirdTotal');
+
+const historyItems = document.getElementById("history-items");
+const cardNameOne = document.getElementById("card-name-1").innerText;
+const cardNameTwo = document.getElementById("card-name-2").innerText;
+const cardNameThree = document.getElementById("card-name-3").innerText;
+
+// // function 04
+function addHistoryItem(amount, cardName) {
+    let historyItem = document.createElement("div");
+    historyItem.className = `p-5 rounded-xl border flex flex-col gap-5`;
+    historyItem.innerHTML = `<h1 class="text-xl font-bold"> ${amount} Taka is Donated for ${cardName}</h1> <p  class =" text-xs">Date: ${new Date()}`;
+
+    historyItems.appendChild(historyItem);
+}
